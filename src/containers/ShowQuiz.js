@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-// import { bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { selectQuiz } from '../redux/actions/index';
 
 class ShowQuiz extends Component {
   createQuizItems() {
     return this.props.quizzes.map((quiz, id) => (
-      <li key={id}>
+      <li onClick={this.props.selectQuiz(quiz)} key={id}>
         {quiz.id}
         {quiz.title}
       </li>
@@ -22,4 +23,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ShowQuiz);
+const mapDispatchToProps = (dispatch) => ({
+  bindActionCreators: () => dispatch({ selectQuiz: selectQuiz }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowQuiz);
