@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class ShowMessages extends Component {
+  showMessage() {
+    return <div>{this.props.messages}</div>;
+  }
   render() {
-    return (
-      <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-      </ul>
-    );
+    return <div>{this.showMessage()}</div>;
   }
 }
 
-export default ShowMessages;
+const mapStateToProps = (state) => {
+  return {
+    messages: state.messages,
+  };
+};
+
+export default connect(mapStateToProps)(ShowMessages);
