@@ -1,5 +1,11 @@
+import ShowQuiz from '../../containers/ShowQuiz';
+
 const Quiz = () => {
-  return <div>Hello, Quiz</div>;
+  return (
+    <div>
+      <ShowQuiz />
+    </div>
+  );
 };
 
 export default Quiz;

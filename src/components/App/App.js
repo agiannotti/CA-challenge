@@ -1,12 +1,13 @@
-import './App.css';
+import React from 'react';
 import Quiz from '../Quiz/Quiz';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
+    <div>
       <Quiz />
     </div>
   );
-}
+};
 
 export default App;
