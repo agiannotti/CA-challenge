@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // import { selectQuiz } from '../redux/actions/index';
 
 class ShowQuiz extends Component {
-  createQuizItems() {
+  generateQuiz() {
     return this.props.quizzes.map((quiz, id) => (
       <li key={id}>
         {quiz.id}
@@ -16,8 +16,7 @@ class ShowQuiz extends Component {
   render() {
     return (
       <>
-        <ul>{this.createQuizItems()}</ul>
-        <div></div>
+        <ul>{this.generateQuiz()}</ul>
       </>
     );
   }
